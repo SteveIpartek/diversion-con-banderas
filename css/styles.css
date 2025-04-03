@@ -1,10 +1,65 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+#countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#def{
+  
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  
+}
+.cajaFicha.activa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  width: 450px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: #333;
+.contenido-ficha {
+  display: flex;
+  align-items: flex-start;
+  
 }
+
+.cajaBandera {
+  margin-right: 20px;
+  width: 200px; /* Ajusta el ancho de la bandera según sea necesario */
+}
+
+.cajaBandera img {
+  width: 100%;
+  height: auto;
+}
+
+
+.cajaData{
+  display: flex;
+  flex-direction: column;
+  
+  
+  
+}
+
+.cajaData h3 {
+
+margin: 10px;
+
+
+} 
+
+.cajaData p{
+  
+margin: 5px;
+
+
+}
+
+
+

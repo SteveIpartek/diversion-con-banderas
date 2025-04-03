@@ -54,6 +54,7 @@ getFlags().then((resultados) => {
     if (cajaBanderaElement) {
       const cajaFichaElement = cajaBanderaElement.closest('.cajaFicha');
       if (cajaFichaElement) {
+        cajaFichaElement.classList.add('activa');
         const nombrePais = cajaFichaElement.dataset.nombre;
         const detallesMostrados = cajaFichaElement.dataset.detallesMostrados === 'true';
         const paisSeleccionado = banderaInfo.find(bandera => bandera.name === nombrePais);
@@ -69,10 +70,12 @@ function mostrarDetallesPais(cajaFicha, pais, detallesMostrados) {
   if (detallesMostrados) {
     // Si los detalles ya están mostrados, volvemos al estado original
     cajaFicha.innerHTML = `
-      <div class="cajaBandera">
-        <img src="${pais.flag}" alt="Bandera de ${pais.name}" />
-      </div>
-      <h3>${pais.name}</h3>
+        <div id="def">
+          <div class="cajaBandera">
+          <img src="${pais.flag}" alt="Bandera de ${pais.name}" />
+          </div>
+          <h3>${pais.name}</h3>
+        </div>
     `;
     cajaFicha.dataset.detallesMostrados = 'false';
   } else {
@@ -81,10 +84,12 @@ function mostrarDetallesPais(cajaFicha, pais, detallesMostrados) {
       <div class="cajaBandera">
         <img src="${pais.flag}" alt="Bandera de ${pais.name}" />
       </div>
+      <div class="cajaData">
       <h3>${pais.name}</h3>
       <p>Capital: ${pais.capital}</p>
       <p>Población: ${pais.population.toLocaleString()}</p>
       <p>Lado de conducción: ${pais.site}</p>
+      </div>
     `;
     cajaFicha.dataset.detallesMostrados = 'true';
   }
